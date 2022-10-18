@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elercicios</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+<!-- === EJERCICIO 1 === -->
+    <div class="ejercicio1">
+        <section class="container">
+            <h1>Ejercicio 1</h1>
+            <p>Haz click sobre la foto!</p>
+            <a href="#" onclick="
+                var bordeImg = document.querySelector('#picture')
+
+                if (bordeImg.style.border == ''){
+                bordeImg.style.border = '3px solid red';
+                }else if(bordeImg.style.border == '3px solid red'){
+                bordeImg.style.border = '';}">
+            <img src="./assets/img/isa-agus.jpeg" id="picture" height="500px" alt="isa y agus" />
+            </a>
+        </section>
+    </div>
+<!-- === EJERCICIO 2 === -->
+    <div class="ejercicio2">
+        <div class="texto">
+            <h1>Ejercicio 2</h1>
+            <p>Selecciona los Stickers!</p>
+        </div>
+        <section class="container-2">
+            <div class="stickers">
+                <img src="assets/img/sticker-1.png" height="200px" alt="sticker-1">
+                <input type="number" id="input-1" name="cantidad">
+            </div>
+            <div class="stickers">
+                <img src="assets/img/sticker-2.png" height="200px" alt="sticker-1">
+                <input type="number" id="input-2" name="cantidad">
+            </div>
+            <div class="stickers">
+                <img src="assets/img/sticker-3.png" height="200px" alt="sticker-1">
+                <input type="number" id="input-3" name="cantidad">
+            </div>
+        </section>
+        <p id="resultadoStickers"></p>
+        <button onclick="
+        var primerSticker = Number(document.getElementById('input-1').value);
+        var segundoSticker = Number(document.getElementById('input-2').value);
+        var tercerSticker = Number(document.getElementById('input-3').value);
+        
+        var totalSticker = primerSticker + segundoSticker + tercerSticker;
+
+        if(totalSticker > 10){
+            document.getElementById('resultadoStickers').textContent = 'Llevas ' +totalSticker + ', sobrepasas el límite de Stickers!'
+        } else if(totalSticker === 10){
+            document.getElementById('resultadoStickers').textContent = 'Levas en total ' + totalSticker + ', es el máximo permitido!'
+        }else {
+            document.getElementById('resultadoStickers').textContent = 'Llevas ' + totalSticker + ' en total!'
+        }
+        ">Verificar</button>
+    </div>
+<!-- === EJERCICIO 3 === -->
+    <div class="ejercicio3">
+
+            <h1>Ejercicio 3</h1>
+            <p>Ingresa el password</p>
+
+        <section class="container-3">
+            <select id="valor-a">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <select id="valor-b">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <select id="valor-c">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+        </section>
+        <p id="clave"></p>
+        <button class="btn" onclick="
+        var opcion1 = Number(document.getElementById('valor-a').value);
+        var opcion2 = Number(document.getElementById('valor-b').value);
+        var opcion3 = Number(document.getElementById('valor-c').value);
+        
+
+        if(opcion1 === 9 && opcion2 === 1 && opcion3 ===1){
+            document.getElementById('clave').textContent = 'Password 1 correcto'
+        } else if(opcion1 === 7 && opcion2 ===1 && opcion3 === 4){
+            document.getElementById('clave').textContent = 'Password 2 correcto'
+        } else{
+            document.getElementById('clave').textContent = 'Clave incorrecta!'
+        }
+
+        ">Ingresar</button>
+        
+    </div>
+</body>
+
+</html>
